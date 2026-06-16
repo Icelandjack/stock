@@ -1,0 +1,19 @@
+cabal-version:      3.0
+name:               stock-showcase
+version:            0.1.0.0
+synopsis:           Showcase deriving the full breadth of the stock plugin
+license:            BSD-3-Clause
+author:             Baldur Blöndal
+build-type:         Simple
+
+-- A separate package (not a stock test-suite) so it can depend on the
+-- companions without a dependency cycle (companions depend on stock).
+executable stock-showcase
+  main-is:          Showcase.hs
+  build-depends:    base >=4.18 && <5,
+                    stock,
+                    stock-deepseq, stock-hashable, stock-aeson,
+                    stock-quickcheck, stock-profunctors,
+                    deepseq, hashable, aeson, QuickCheck, profunctors
+  ghc-options:      -fplugin=Stock -Wall
+  default-language: GHC2021

@@ -1,0 +1,10 @@
+packages: 
+  .
+  deepseq
+  hashable
+  profunctors
+  quickcheck
+  aeson
+  showcase
+
+with-compiler: ghc-9.10.3
